@@ -26,7 +26,7 @@ def setup_soup(sign, day):
 def grab_paragraph(sign, day):
     '''scrapes the appropriate paragraph from astrology.com using sign and day'''
     soup = setup_soup(sign, day)
-    return soup.p.string
+    return soup.p.span.next.next
 
 
 def get_horoscope(sign, day='today'):
